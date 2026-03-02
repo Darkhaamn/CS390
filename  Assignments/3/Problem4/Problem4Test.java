@@ -11,6 +11,6 @@ class Problem4Test {
         Problem4 p = new Problem4();
 
         int testInt[] = {5, -3, 6, 1, 9, 11};
-        assertEquals(1,  p.findMax(testInt, 0));
+        assertEquals(11,  p.findMax(testInt, 0));
     }
 }

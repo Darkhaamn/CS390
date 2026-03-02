@@ -15,6 +15,11 @@ public class Problem3 {
         if (num < 0) {
             return false;
         }
+
+        if (num >= 0 && num < 10) {
+            return true;
+        }
+
         int reversed = reverseRecursive(num, 0);
         return num == reversed;
     }
