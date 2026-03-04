@@ -5,8 +5,6 @@ public class Clothing extends Product {
     double discount;
 
     Clothing(String productName, double price, String brand, double discount) {
-        super(productName, price);
-
         if (brand == null || brand == "") {
             throw new IllegalArgumentException("Brand cannot be empty");
         }
@@ -14,6 +12,13 @@ public class Clothing extends Product {
         if (discount < 0 || discount > 100) {
             throw new IllegalArgumentException("Discount must be between 0 and 100");
         }
+
+        if (productName == null || productName == "") {
+            throw new IllegalArgumentException("Product name cannot be empty");
+        }
+
+        super(productName, price);
+
 
         this.brand = brand;
         this.discount = discount;

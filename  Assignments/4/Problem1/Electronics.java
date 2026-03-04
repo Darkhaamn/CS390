@@ -5,8 +5,6 @@ public class Electronics extends Product {
     double warrantyCost; // warranty cost
 
     Electronics(String productName, double price, int warranty, double warrantyCost) {
-        super(productName, price);
-
         if (warranty < 0) {
             throw new IllegalArgumentException("Warranty months cannot be negative");
         }
@@ -14,6 +12,8 @@ public class Electronics extends Product {
         if (warrantyCost < 0) {
             throw new IllegalArgumentException("Warranty cost cannot be negative");
         }
+
+        super(productName, price);
 
         this.warranty = warranty;
         this.warrantyCost = warrantyCost;

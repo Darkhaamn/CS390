@@ -5,15 +5,19 @@ public class Furniture extends Product {
     double shippingCost; // Shipping cost
 
     Furniture(String productName, double price, Material material, double shippingCost) {
-        super(productName, price);
-
-        if (material == null) {
+        if (material == null || material == Material.MAT_WOOD || material == Material.MAT_PLASTIC || material == Material.MAT_STEEL) {
             throw new IllegalArgumentException("Material cannot be null");
         }
 
         if (shippingCost < 0) {
             throw new IllegalArgumentException("Shipping cost cannot be negative");
         }
+
+        if (productName == null || productName == "" || productName.trim().isEmpty()) {
+            throw new IllegalArgumentException("Product name cannot be empty");
+        }
+
+        super(productName, price);
     }
 
     @Override
